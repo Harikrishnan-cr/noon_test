@@ -20,5 +20,9 @@ class GoogleFont {
   static TextStyle buttonTextStyleLogin = GoogleFonts.poppins(
       fontWeight: FontWeight.bold,color: AppColors.whiteColor);
 
- 
+
+      //------------------Home Screen ---------------------------
+
+   static TextStyle homeScreenHead = GoogleFonts.poppins(
+      fontWeight: FontWeight.w600, color: AppColors.headTextBlackColor,fontSize: 15);  
 }

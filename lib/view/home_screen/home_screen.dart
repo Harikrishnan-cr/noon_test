@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_avif/flutter_avif.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:noon/core/color/colors.dart';
 import 'package:noon/core/consts/image_paths.dart';
@@ -49,7 +50,6 @@ class HomeScreen extends StatelessWidget {
             ),
           )
         ],
-      
       ),
       body: ListView(
         children: [
@@ -111,7 +111,57 @@ class HomeScreen extends StatelessWidget {
                                 )))
                   ],
                 ),
-              ))
+              )),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child:
+                Text('Recommended for you', style: GoogleFont.homeScreenHead),
+          ),
+          Container(
+            height: 230,
+            color: AppColors.amberColor,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: List.generate(10, (index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Stack(
+                    children: [ 
+                      Container(
+                        height: 230,
+                        width: 95,
+                        color: AppColors.whiteColor,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: 100,
+                              
+                                decoration: BoxDecoration( 
+                                  color: AppColors.blueColor,
+                                  image: DecorationImage(image: AssetAvifImage('assets/images/N53346840A_1.avif'),fit: BoxFit.cover)         
+                                ),
+                                // color: AppColors.blueColor,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+
+                      Positioned(
+                        left: 74,
+                        top: 2,
+                        child: CircleAvatar(radius: 10,
+                        backgroundColor: AppColors.whiteColor,
+                        child: Center(child: Icon(Icons.favorite_border_rounded,size: 14,color: AppColors.greyColor,)),
+                        ))
+                    ],
+                  ),
+                );
+              }),
+            ),
+          )
         ],
       ),
     );
