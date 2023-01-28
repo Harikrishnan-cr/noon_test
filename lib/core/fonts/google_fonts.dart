@@ -24,5 +24,8 @@ class GoogleFont {
       //------------------Home Screen ---------------------------
 
    static TextStyle homeScreenHead = GoogleFonts.poppins(
-      fontWeight: FontWeight.w600, color: AppColors.headTextBlackColor,fontSize: 15);  
+      fontWeight: FontWeight.w600, color: AppColors.headTextBlackColor,fontSize: 17); 
+
+       static TextStyle recomendeTiletext = GoogleFonts.poppins(
+      fontWeight: FontWeight.w500, color: AppColors.blackColor,fontSize: 14);  
 }

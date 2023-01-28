@@ -9,7 +9,11 @@ import 'package:noon/core/size/size.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
+  final isBestseller = true;
+  final recamendedTileText =
+      'Apple iPhone 14 Pro Max 256GB Deep Purple 5G With FaceTime - Middle East Version';
+  final rating = 4.5;
+  final isDiscount = false; 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -118,45 +122,155 @@ class HomeScreen extends StatelessWidget {
                 Text('Recommended for you', style: GoogleFont.homeScreenHead),
           ),
           Container(
-            height: 230,
-            color: AppColors.amberColor,
+            height: 305,
+            // color: AppColors.amberColor,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: List.generate(10, (index) {
-                return Padding(
+                return Padding( 
                   padding: const EdgeInsets.all(8.0),
-                  child: Stack(
-                    children: [ 
-                      Container(
-                        height: 230,
-                        width: 95,
-                        color: AppColors.whiteColor,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height: 100,
-                              
-                                decoration: BoxDecoration( 
-                                  color: AppColors.blueColor,
-                                  image: DecorationImage(image: AssetAvifImage('assets/images/N53346840A_1.avif'),fit: BoxFit.cover)         
-                                ),
+                  child: Container(
+                    height: 305, 
+                    width: 140,
+                    color: AppColors.whiteColor,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: 150,
+
+                                decoration: BoxDecoration(
+                                    color: AppColors.blueColor,
+                                    image: DecorationImage(
+                                        image: AssetAvifImage(
+                                            'assets/images/N53346840A_1.avif'),
+                                        fit: BoxFit.fill)),
                                 // color: AppColors.blueColor,
                               ),
+                              Positioned(
+                                  child: isBestseller
+                                      ? Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Container(
+                                            width: 70,
+                                            height: 20,
+                                            decoration: BoxDecoration(
+                                                color: AppColors
+                                                    .secondaryBlackColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(12)),
+                                            child: Center(
+                                                child: Text(
+                                              'Best seller',
+                                              style: TextStyle(
+                                                  color: AppColors.whiteColor,
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold),
+                                            )),
+                                          ),
+                                        )
+                                      : SizedBox()),
+                              Positioned(
+                                  left: 90,
+                                  top: 5,
+                                  child: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: AppColors.whiteColor,
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.favorite_border_rounded,
+                                      size: 18,
+                                      color: AppColors.greyColor,
+                                    )),
+                                  )),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
+                          child: SizedBox(
+                              height: 40,
+                              child: Text(
+                                recamendedTileText,
+                                style: GoogleFont.recomendeTiletext,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                              )),
+                        ),
+                        kheight10,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'SAR',
+                                style: TextStyle(fontSize: 11),
+                              ),
+                              kwidth5,
+                              Text('5,599.00',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ),kheight5,
+                       isDiscount ?  Padding(  padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: Row(
+                          children: [
+                            Text('777.00',style: TextStyle(fontSize: 11,decoration: TextDecoration.lineThrough),), 
+                            kwidth5,
+                            Text('58% OFF',style: TextStyle(color: AppColors.greenColor,fontSize: 12,fontWeight: FontWeight.bold),)
+                          ],
+                        )
+                        ): SizedBox(
+                          height: 12,
+                        ),
+                        kheight15,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/svg/express.svg',
+                              width: 38,
+                              height: 15,
+                            ),
+                            Container(
+                              width: 40,
+                              height: 15,
+                              decoration: BoxDecoration(
+                                  color: AppColors.greenColor,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    rating.toString(),
+                                    style: TextStyle(
+                                        color: AppColors.whiteColor,
+                                        fontSize: 12),
+                                  ),
+                                  Icon(
+                                    Icons.star_rate_rounded,
+                                    size: 15,
+                                    color: AppColors.whiteColor,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Text(
+                              '(119)',
+                              style: TextStyle(
+                                  fontSize: 12, color: AppColors.greyColor),
                             )
                           ],
-                        ),
-                      ),
-
-                      Positioned(
-                        left: 74,
-                        top: 2,
-                        child: CircleAvatar(radius: 10,
-                        backgroundColor: AppColors.whiteColor,
-                        child: Center(child: Icon(Icons.favorite_border_rounded,size: 14,color: AppColors.greyColor,)),
-                        ))
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 );
               }),
