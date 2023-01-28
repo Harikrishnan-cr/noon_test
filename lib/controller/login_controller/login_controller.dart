@@ -23,10 +23,11 @@ class LoginController extends GetxController {
   }
 
   void isUserInavalid() {
+    log('ccc'); 
     emailIdError = 'Incorrect email or password';
     passwordError = 'Incorrect email or password';
 
-    timerMessage();
+   // timerMessage();
     update();
   }
 
@@ -36,7 +37,7 @@ class LoginController extends GetxController {
   }
 
   bool isFormValid = false;
-  bool checkIsValid() {
+  bool checkIsValid() { 
     isFormValid = false;
     if (emailIdErrorIsvalid == true && passwordErrorIsvalid == true) {
       isFormValid = true;
@@ -45,8 +46,8 @@ class LoginController extends GetxController {
     } else {
       log('isnot');
       isValidText = 'All feilds are required';
+      isUserInavalid();  
       timerMessage();
-
       update();
       return false;
     }
