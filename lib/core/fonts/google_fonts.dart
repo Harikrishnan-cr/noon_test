@@ -14,6 +14,9 @@ class GoogleFont {
   static TextStyle loginHintTextTop = GoogleFonts.poppins(
       fontWeight: FontWeight.w500, color: AppColors.greyColor);
 
+       static TextStyle serachTextStyle = GoogleFonts.poppins(
+      fontWeight: FontWeight.w500, color: AppColors.greyColor,fontSize: 12);
+
   static TextStyle buttonTextStyleLogin = GoogleFonts.poppins(
       fontWeight: FontWeight.bold,color: AppColors.whiteColor);
 
