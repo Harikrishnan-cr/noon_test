@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:noon/core/color/colors.dart';
 import 'package:noon/view/login_screen/login_screen.dart';
+import 'package:noon/view/register_screen/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,17 +10,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        
-    canvasColor: Colors.white
-      ),
-      home: const LoginScreen(), 
+      theme: ThemeData(canvasColor: AppColors.whiteColor),
+      home:  RegisterScreen(),
     );
   }
 }

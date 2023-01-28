@@ -1,0 +1,21 @@
+import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:noon/core/color/colors.dart';
+
+class GoogleFont {
+  static TextStyle loginMainText = GoogleFonts.poppins(
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      color: AppColors.secondaryBlackColor);
+  static TextStyle loginHintText = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold, color: AppColors.greyColor);
+  static TextStyle richTextStyle = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold, color: AppColors.blackColor);
+  static TextStyle loginHintTextTop = GoogleFonts.poppins(
+      fontWeight: FontWeight.w500, color: AppColors.greyColor);
+
+  static TextStyle buttonTextStyleLogin = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.whiteColor);
+
+ 
+}
