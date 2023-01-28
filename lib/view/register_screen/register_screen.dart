@@ -56,10 +56,10 @@ class RegisterScreen extends StatelessWidget {
                   GetBuilder<RegisterScreenController>(
                       builder: (registerController) {
                     return TextFeildCommonWidget(
-                      onChanged: (value) {
-                        registerController.onLastNameError(value);
-                      },
-                      errorMessages: registerController.lastNameError,
+                    onChanged: (value) {
+                      registerController.onLastNameError(value); 
+                    },
+              errorMessages: registerController.lastNameError,
                       textEditingControllers: lastNameController,
                       hintText: 'Please enter last name',
                       hintTextTop: 'Last Name',
@@ -125,10 +125,14 @@ class RegisterScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       if (registerController.checkIsValid()) {
+
+                        log('is called');
                         registerController.registerUserData(
                             userEmail: emailController.text,
                             userPassword: passwordController.text,
                             context: context);
+
+                            
                       } else {
                         log('In valid user');
                       }

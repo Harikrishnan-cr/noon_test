@@ -105,9 +105,9 @@ void isUserAccountAlreadyExist(){
     if (value.isEmpty) {
       lastNameError = null;
       lastNameErrorIsvalid = false;
-    } else if (value.length < 2) {
-      lastNameError = 'Name Must Conatains 2 letter';
-      nameErrorIsvalid = false; 
+    } else if (value.isEmpty) {
+      lastNameError = 'Name Must Conatains 1 letter';
+      nameErrorIsvalid = false;
     } else {
       lastNameErrorIsvalid = true;
       lastNameError = null;
