@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:noon/controller/login_controller/login_controller.dart';
+import 'package:noon/view/bottom_bar/bottom_bar.dart';
 import 'package:noon/view/home_screen/home_screen.dart';
 
 class LoginServices {
@@ -20,7 +21,7 @@ class LoginServices {
                 email: userEmail, password: userPassword)
             .then((value) => Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
-                  builder: (context) => HomeScreen(),
+                  builder: (context) => BottomBarScreen(),
                 ),
                 (route) => false))
             .whenComplete(() {

@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:noon/core/color/colors.dart';
 import 'package:noon/core/size/size.dart';
 
@@ -16,7 +17,7 @@ AppBar commonAppBar() {
     backgroundColor: Colors.transparent,
     elevation: 0,
     toolbarHeight: 90,
-    actions: const [
+    actions:  [
       Icon(
         Icons.close,
         size: 32,

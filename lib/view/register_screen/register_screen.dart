@@ -10,6 +10,8 @@ import 'package:noon/view/common/functions/app_bar/app_bar_common.dart';
 import 'package:noon/view/common/widgets/buttons/login_register_button.dart';
 import 'package:noon/view/common/widgets/text_feild/text_feild.dart';
 import 'package:noon/view/common/widgets/texts/login_page_text.dart';
+import 'package:noon/view/login_screen/login_screen.dart';
+
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -132,6 +134,7 @@ class RegisterScreen extends StatelessWidget {
                             context: context);
                       } else {
                         log('In valid user');
+                        
                       }
                     },
                     child: const Center(
@@ -139,9 +142,14 @@ class RegisterScreen extends StatelessWidget {
                             buttonColor: AppColors.amberColor,
                             buttonText: 'Sign Up')),
                   ),
-                  const RichTextLoginRegister(
-                      richText1: 'Already have an account? ',
-                      richText2: 'Sign In')
+                  GestureDetector(
+                    onTap: () {
+                       Get.off(()=>LoginScreen());
+                    },
+                    child: const RichTextLoginRegister(
+                        richText1: 'Already have an account? ',
+                        richText2: 'Sign In'),
+                  )
                 ],
               ),
             ),

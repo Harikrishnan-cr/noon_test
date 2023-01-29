@@ -32,5 +32,30 @@ class GoogleFont {
        static TextStyle dealsCommonTextstyle = GoogleFonts.poppins( 
      fontWeight: FontWeight.bold,color: AppColors.blackColor,fontSize: 16.2);  
        static TextStyle megaDealSpecialTextstyle = GoogleFonts.poppins( 
-     fontWeight: FontWeight.bold,color: AppColors.redColor,fontSize: 13);   
+     fontWeight: FontWeight.bold,color: AppColors.redColor,fontSize: 13); 
+
+     
+  static TextStyle transprantButtonTextSty = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.blueColor,fontSize: 12);  
+  static TextStyle specialTextSApnOne = GoogleFonts.poppins(
+      fontWeight: FontWeight.w900,color: AppColors.blackColor,fontSize: 16);  
+      static TextStyle specialTextSApnTwo = GoogleFonts.poppins(
+      fontWeight: FontWeight.w900,color: AppColors.redColor,fontSize: 16); 
+
+      static TextStyle fashionTileButtonText = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.blackColor,fontSize: 11);
+
+       static TextStyle fashionTileHeadText = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.yellowColor);
+
+       static TextStyle fashionTileSubHeadText = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.blackColor);
+
+
+       static TextStyle buttonFilledTextHomeLast = GoogleFonts.poppins(
+      fontWeight: FontWeight.w500,color: AppColors.whiteColor,fontSize: 13); 
+
+
+       static TextStyle splashScreenText = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold,color: AppColors.blackColor,fontSize: 25); 
 }

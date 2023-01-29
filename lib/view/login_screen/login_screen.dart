@@ -9,6 +9,7 @@ import 'package:noon/view/common/functions/app_bar/app_bar_common.dart';
 import 'package:noon/view/common/widgets/buttons/login_register_button.dart';
 import 'package:noon/view/common/widgets/text_feild/text_feild.dart';
 import 'package:noon/view/common/widgets/texts/login_page_text.dart';
+import 'package:noon/view/register_screen/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -45,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                       onChanged: (value) {
                         loginController.onEmailError(value: value);
                       },
-                       errorMessages: loginController.emailIdError, 
+                      errorMessages: loginController.emailIdError,
                       textEditingControllers: emailController,
                       hintText: 'Please enter your email address',
                       hintTextTop: 'Email',
@@ -54,15 +55,22 @@ class LoginScreen extends StatelessWidget {
                   kheight15,
                   GetBuilder<LoginController>(builder: (loginController) {
                     return TextFeildCommonWidget(
-                      onChanged: (value) {
-                        loginController.onPasswordError(value);
-                      },
-                     errorMessages: loginController.passwordError,
-                      textEditingControllers: passwordController,
-                      hintText: 'Please enter your password',
-                      hintTextTop: 'Password',  
-                      passwordIcons: const Icon(Icons.visibility),
-                    );
+                        onChanged: (value) {
+                          loginController.onPasswordError(value);
+                        },
+                        isVisible: !loginController.isPassVisible,
+                        errorMessages: loginController.passwordError,
+                        textEditingControllers: passwordController,
+                        hintText: 'Please enter your password',
+                        hintTextTop: 'Password',
+                        passwordIcons: GestureDetector(
+                          onTap: () {
+                            loginController.onPasswordVisible();
+                          },
+                          child: loginController.isPassVisible
+                              ? const Icon(Icons.visibility)
+                              : const Icon(Icons.visibility_off),
+                        ));
                   }),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -105,8 +113,13 @@ class LoginScreen extends StatelessWidget {
                                 strokeWidth: 5,
                               ));
                   })),
-                  RichTextLoginRegister(
-                      richText1: richText1, richText2: richText2)
+                  GestureDetector(
+                    onTap: () {
+                      Get.off(() => RegisterScreen());
+                    },
+                    child: RichTextLoginRegister(
+                        richText1: richText1, richText2: richText2),
+                  )
                 ],
               ),
             ),
