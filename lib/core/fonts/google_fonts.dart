@@ -28,4 +28,9 @@ class GoogleFont {
 
        static TextStyle recomendeTiletext = GoogleFonts.poppins(
       fontWeight: FontWeight.w500, color: AppColors.blackColor,fontSize: 14);  
+
+       static TextStyle dealsCommonTextstyle = GoogleFonts.poppins( 
+     fontWeight: FontWeight.bold,color: AppColors.blackColor,fontSize: 16.2);  
+       static TextStyle megaDealSpecialTextstyle = GoogleFonts.poppins( 
+     fontWeight: FontWeight.bold,color: AppColors.redColor,fontSize: 13);   
 }

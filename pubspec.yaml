@@ -43,7 +43,7 @@ dependencies:
   firebase_auth: ^4.2.5
   flutter_svg: ^1.1.6
   card_swiper: ^2.0.4
-  flutter_avif: ^1.0.1  
+  flutter_avif: ^1.0.1   
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/svg/ 
-     - assets/images/               
+     - assets/images/                      
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

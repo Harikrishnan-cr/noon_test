@@ -6,7 +6,9 @@ class AppColors {
   static const headTextBlackColor = Color.fromARGB(255, 16, 15, 15);
   static const secondaryBlackColor = Color.fromARGB(255, 65, 65, 65);
   static const greyColor = Colors.grey;
+  static const secondaryGreyColor = Color.fromARGB(163, 158, 158, 158);
   static const amberColor = Colors.amber;
+  static const redColor = Colors.red;
   static const greenColor = Colors.green;
   static const secondaryGreenColor = Color.fromARGB(255, 188, 223, 99);
   static const blueColor = Color.fromARGB(255, 18, 95, 182);
